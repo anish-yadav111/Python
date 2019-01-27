@@ -91,7 +91,7 @@ class OpenSubtitle:
         else:
             return "Error"
 
-    def DownloadSubtitles(self):
+    def DownloadSubtitles(self,path):
         resp= ""
         server= xmlrpclib.Server(self.url)
 
@@ -110,7 +110,8 @@ class OpenSubtitle:
                         resp= zlib.decompress(resp, 47)
 
                         name= self.video['name']
-                        sub_file = (name + '_' + j[0: 2]).upper() + '.srt'
+                        sub_file =path+'/'+(name + '_' + j[0: 2]).upper() + '.srt'
+                        
 
                         f= open(sub_file, 'wb')
                         f.write(resp)

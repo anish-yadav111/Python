@@ -5,9 +5,9 @@ import openSubtitle
 
 videoPath = input()
 
-name = videoPath.split('/')[-1].split('.')[0]
-print(name)
-
+name = videoPath.split('/')[-1]
+path = videoPath.split('/')
+downloadPath = "/".join(path[0:len(path)-1])
 
 videoSize = os.path.getsize(videoPath)
 
@@ -22,20 +22,22 @@ if Subtitle.CheckMovieHash() != 'Error':
 
 
     if Subtitle.SearchSubtitles(1) != 'Error':
-        Subtitle.DownloadSubtitles()
+        Subtitle.DownloadSubtitles(downloadPath)
 
     if Subtitle.SearchSubtitles(2) != 'Error':
-        Subtitle.DownloadSubtitles()
+        Subtitle.DownloadSubtitles(downloadPath)
 
     if Subtitle.SearchSubtitles(3) != 'Error':
-        Subtitle.DownloadSubtitles()
+        Subtitle.DownloadSubtitles(downloadPath)
 
     if Subtitle.SearchSubtitles(4) != 'Error':
-        Subtitle.DownloadSubtitles()
+        Subtitle.DownloadSubtitles(downloadPath)
 
     if Subtitle.SearchSubtitles(5) != 'Error':
-        Subtitle.DownloadSubtitles()
-    
+        Subtitle.DownloadSubtitles(downloadPath)
+  
+else :
+    print("Sorry Could Not Found It : (")  
     
 
 
