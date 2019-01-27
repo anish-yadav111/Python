@@ -3,8 +3,8 @@ import hashVideo
 import openSubtitle
 
 
+videoPath = input()
 
-videoPath = "/media/anish/New Volume/movies/Suicide Squad 2016 English [700Mbdownload.in] EXTENDED 720p BRRip.mkv"
 name = videoPath.split('/')[-1].split('.')[0]
 print(name)
 
