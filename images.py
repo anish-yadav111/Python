@@ -26,5 +26,5 @@ try :
    img.save("{}.{}".format(search,img.format))
    print("Successfully saved the image")
 except:
-    print("Error in saving the file :(")
-
+    print("Error in saving the file :( sorry")
+ 
